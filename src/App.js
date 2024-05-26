@@ -2,21 +2,24 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  // Initialize  code js
+  
+  //constante
+  const name = "jane Doe";
+  const age = 24;
+  const element = <h1> hello world </h1>;
+
   return (
+    // HTML pro
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+      {/* constante */}
+        {name}
+        <br></br>
+        {age}
+        {element}
+
       </header>
     </div>
   );
