@@ -15,7 +15,21 @@ function App() {
     age : 24,
   }
 
-  //
+  //fonction return user
+  function getEtudiant(etudiant){
+    return etudiant
+  }
+
+  //fonction return etudiant
+  function getObjectV1(etudiant){
+  return ` Nom ${etudiant.nom}| Prenom ${etudiant.prenom}| Age ${etudiant.age}`
+  }
+
+  function getObjectV2(etudiant){
+    const results =  etudiant.nom + " " + etudiant.prenom + " " + etudiant.age
+    return results
+    }
+
 
   return (
     // HTML pro
@@ -33,6 +47,10 @@ function App() {
          {etudiant.nom} {etudiant.prenom} {etudiant.age}
       </div>
    
+      <h1>hello {getEtudiant("Oumaima")} </h1>
+
+      <h2>getObjectV1 : {getObjectV1(etudiant)}</h2>
+      <h2>getObjectV2 : {getObjectV2(etudiant)}</h2>
 
 
       </header>
