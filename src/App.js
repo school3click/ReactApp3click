@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -16,6 +15,8 @@ function App() {
     age : 24,
   }
 
+  //
+
   return (
     // HTML pro
     <div className="App">
@@ -28,7 +29,11 @@ function App() {
         {element}
 
       {/* object */}
-      {etudiant.nom} {etudiant.prenom} {etudiant.age}
+      <div className='App-link '> 
+         {etudiant.nom} {etudiant.prenom} {etudiant.age}
+      </div>
+   
+
 
       </header>
     </div>
