@@ -4,7 +4,7 @@ export default function exemple() {
     //
   return (
     <div>
-      
+      hello from Page Exemple
     </div>
   )
 }

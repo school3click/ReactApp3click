@@ -1,9 +1,11 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Welcome from "./Welcome";
-function App() {
+import { useParams ,Link} from "react-router-dom"
+function Home() {
   // Initialize  code js
 
+  const { username } = useParams();
   //constante
   const name = "jane Doe";
   const age = 24;
@@ -52,6 +54,51 @@ function App() {
     color: "red",
     backround: "purple",
   });
+
+  // useEffect(() => {
+  //   // document.title = `Vous avez clique ${count} fois`
+  //   console.log(`Vous avez clique ${count} fois`);
+  // });
+
+  useEffect(() => {
+
+     setTimeout(() => {
+       setCount((count) => count + 1);
+       console.log(`nombre de compliplastion ${count}`);	
+
+     }, 1000);
+
+   },[count]);
+
+  //useEffect(,[x]) 
+  //useEffect(() => {},[x])
+
+  // useEffect(() => {
+  //    console.log('cette fonction va etre execute la premiere fois et a chaque modification de la variable count ');
+  //    console.log('car le deuxieme argument est count ');
+  //    return () => {
+  //    console. log('cette partie va etre execute pour nettoyer et lors de loperation unmounting ');
+  //    }
+  //    }, [state]);
+
+  //useEffect(,[]) 
+  //useEffect(() => {},[])
+
+  // useEffect(() => {
+  //   console.log('cette fonction va etre execute une fois seulement ');
+  //   console.log('car le deuxieme argument est un tableau vide ');
+  //   return () => {
+  //   console. log(' cette partie va etre execute seulement lors de loperation unmounting ')
+  //   }
+  //}, [])
+    
+  //useEffect() 
+  //useEffect(() => {})
+
+  // useEffect(() => {
+  //   console.log('cette fonction va etre execute chaque re-render');
+  //   console.log('car pas de deuxieme argument passer');
+  //   });
 
   return (
     // jsx
@@ -118,7 +165,10 @@ function App() {
           </tbody>
         </table> */}
 
-        <p className="maClasse"> Formation React </p>
+        <p className="maClasse"> Formation React 
+        
+        <div className="userName" >{username}</div></p>
+        <Link to="/About/JSX">link</Link>
         {/* 
         <Welcome name="Dora thoraya" /> */}
 
@@ -136,9 +186,7 @@ function App() {
         <br />
         <input
           onChange={(e) =>
-            setData( 
-              (current) => ({ ...current, color: e.target.value })
-            )
+            setData((current) => ({ ...current, color: e.target.value }))
           }
         />
       </header>
@@ -146,4 +194,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
